@@ -25,13 +25,22 @@
             <form action="{%url 'search'%}" method="GET">
               <div class="input-group">
                 <input class="form-control" type="text" name="keyword" value="{{keyword}}" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                <button type="submit" class="btn btn-danger" id="button-search" type="button">Go!</button>
+                <button type="submit" class="btn btn-dark" id="button-search" type="button">Go!</button>
             </div>
             </form>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
-            <a class="btn btn-sm btn-warning" href="#">Sign In</a> &nbsp;
-            <a class="btn btn-sm btn-outline-secondary" href="#">Register</a>
+            <!-- a96 -->
+             {%if not user.is_authenticated%}
+            <!-- a91 -->
+            <a class="btn btn-sm btn-warning" href="{%url 'login'%}">Login</a> &nbsp;
+            <!-- a79 -->
+            <a class="btn btn-sm btn-outline-secondary" href="{%url 'register'%}">Register</a>
+            {%else%}
+            <span>Status Login : {{user}}</span>
+            &emsp;
+            <span><a href="{%url 'logout'%}">Logout</a></span>
+            {%endif%}
           </div>
         </div>
       </header>
