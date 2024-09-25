@@ -6,6 +6,8 @@ from . import views
 #a17
 from django.conf.urls.static import static
 from django.conf import settings
+#a48
+from blogs import views as BlogsView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -13,6 +15,11 @@ urlpatterns = [
     path("", views.home, name="home"),
     #a33
     path("category/", include('blogs.urls')),
+    #a47
+    path("<slug:slug>/", BlogsView.blogs, name="blogs"),
+    #a72
+    #search endpoint
+    path("blogs/search", BlogsView.search, name="search"),
 
 #a16
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

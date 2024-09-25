@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.http import HttpRequest
 from .models import Category, Blog
 
 #a22
@@ -13,4 +14,5 @@ class BlogAdmin(admin.ModelAdmin):
 admin.site.register(Category)
 #a21
 admin.site.register(Blog, BlogAdmin)
+
 

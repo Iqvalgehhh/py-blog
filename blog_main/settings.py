@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     #a10
     "blogs",
+    #a63
+    "info",
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,8 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 #a45
                 "blogs.context_processors.get_categories",
+                #a67
+                "blogs.context_processors.get_social_links",
             ],
         },
     },
