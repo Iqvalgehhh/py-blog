@@ -23,6 +23,15 @@ urlpatterns = [
     path('posts/edit/<int:pk>/', views.edit_post, name='edit_post'),
     #a139
     path('posts/delete/<int:pk>/', views.delete_post, name='delete_post'),
+    # a142
+    # users crud
+    path('users/', views.users, name='users'),
+    # a146
+    path('users/add', views.add_user, name='add_user'),
+    #a152
+    path('users/edit/<int:pk>/', views.edit_user, name='edit_user'),
+    #a156
+    path('users/delete/<int:pk>/', views.delete_user, name='delete_user'),
     
 
 ]
