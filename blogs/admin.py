@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.http import HttpRequest
-from .models import Category, Blog
+from .models import Category, Blog, Comment
 
 #a22
 class BlogAdmin(admin.ModelAdmin):
@@ -14,5 +14,8 @@ class BlogAdmin(admin.ModelAdmin):
 admin.site.register(Category)
 #a21
 admin.site.register(Blog, BlogAdmin)
+#a159
+admin.site.register(Comment)
+
 
 
